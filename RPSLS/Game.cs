@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace RPSLS
 {
-    class Spock
+    class Game
     {
+        string winnerName;
+        bool winner;
     }
 }

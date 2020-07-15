@@ -8,5 +8,8 @@ namespace RPSLS
 {
     class Choice
     {
+        string name;
+        List<Choice> beat;
+        List<Choice> loose;
     }
 }

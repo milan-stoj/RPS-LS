@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace RPSLS
 {
-    class Rock
+    class Round
     {
+        int roundNumber;
+
     }
 }

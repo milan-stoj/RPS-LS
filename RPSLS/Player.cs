@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace RPSLS
 {
-    class Paper
+    class Player
     {
+        string name;
+        int roundsWon;
     }
 }
