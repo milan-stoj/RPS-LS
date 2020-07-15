@@ -9,7 +9,11 @@ namespace RPSLS
     class Choice
     {
         string name;
-        List<Choice> beat;
-        List<Choice> loose;
+        public string[] choices;
+
+        public Choice()
+        {
+            choices = new string[5] { "Rock", "Paper", "Scissors", "Lizard", "Spock" };
+        }
     }
 }

@@ -10,5 +10,13 @@ namespace RPSLS
     {
         string winnerName;
         bool winner;
+        Player[] players;
+
+        Round[] roundHistory;
+
+        public Game()
+        {
+            round
+        }
     }
 }

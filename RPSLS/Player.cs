@@ -10,5 +10,12 @@ namespace RPSLS
     {
         string name;
         int roundsWon;
+        Choice possibleChoices;
+        Random rand;
+
+        public Player()
+        {
+            rand = new Random();
+        }
     }
 }

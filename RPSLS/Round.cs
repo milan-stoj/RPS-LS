@@ -9,6 +9,6 @@ namespace RPSLS
     class Round
     {
         int roundNumber;
-
+        Player winner;
     }
 }
