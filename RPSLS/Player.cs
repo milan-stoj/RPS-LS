@@ -12,6 +12,11 @@ namespace RPSLS
         public int roundsWon;
         public Choice possibleChoices;
 
+        public Player()
+        {
+            possibleChoices = new Choice();
+        }
+
         
     }
 }
