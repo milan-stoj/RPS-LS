@@ -20,10 +20,20 @@ namespace RPSLS
 
         public void RunGame(Player player1, Player player2)
         {
-            while (true)
+            while (player1.roundsWon < 2 && player2.roundsWon <2)
             {
-                player1.SelectChoice();
+                string player1choice = player1.SelectChoice();
+                string player2choice = player2.SelectChoice();
+                if (player1choice == player2choice)
+                {
+                    Console.WriteLine("Tie! Draw again");
+                }
+                else
+                {
+                    GetWinner(player1choice, player2choice).roundsWon++;
+                }
             }
+            Console.ReadLine();
         }
 
         public Player SelectGameType()
@@ -45,6 +55,41 @@ namespace RPSLS
                         break;
                 }
             }
+        }
+
+        public Player GetWinner(string player1Choice, string player2Choice)
+        {
+            Console.WriteLine($"Player 1 draws {player1Choice} and Player 2 draws {player2Choice}: \n");
+            if (player1Choice == "Rock" && (player2Choice == "Scissors" || player2Choice == "Lizard"))
+            {
+                Console.WriteLine($"Player 1 wins!");
+                return player1;
+            }
+            else if (player1Choice == "Paper" && (player2Choice == "Rock" || player2Choice == "Spock"))
+            {
+                Console.WriteLine($"Player 1 wins!");
+                return player1;
+            }
+            else if (player1Choice == "Scissors" && (player2Choice == "Paper" || player2Choice == "Lizard"))
+            {
+                Console.WriteLine($"Player 1 wins!");
+                return player1;
+            }
+            else if (player1Choice == "Lizard" && (player2Choice == "Spock" || player2Choice == "Paper"))
+            {
+                Console.WriteLine($"Player 1 wins!");
+                return player1;
+            }
+            else if (player1Choice == "Spock" && (player2Choice == "Rock" || player2Choice == "Scissors"))
+            {
+                Console.WriteLine($"Player 1 wins!");
+                return player1;
+            }
+            else
+            {
+                Console.WriteLine($"Player 2 wins!");
+                return player2;
+            } 
         }
     }
 }
