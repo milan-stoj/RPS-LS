@@ -8,14 +8,10 @@ namespace RPSLS
 {
     class Player
     {
-        string name;
-        int roundsWon;
-        Choice possibleChoices;
-        Random rand;
+        public string name;
+        public int roundsWon;
+        public Choice possibleChoices;
 
-        public Player()
-        {
-            rand = new Random();
-        }
+        
     }
 }
