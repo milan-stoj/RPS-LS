@@ -9,7 +9,7 @@ namespace RPSLS
     class Choice
     {
         public List<string> choices;
-        public List<string> choiceImage;
+        // public List<string> choiceImage;
 
         public Choice()
         {
