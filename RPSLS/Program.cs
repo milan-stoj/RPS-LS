@@ -10,7 +10,12 @@ namespace RPSLS
     {
         static void Main(string[] args)
         {
-            Game newGame = new Game();
+            while (true)
+            {
+                Game newGame = new Game();
+                Console.WriteLine("Press enter to play again!");
+                Console.ReadLine();
+            }
         }
     }
 }

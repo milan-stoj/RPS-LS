@@ -18,7 +18,7 @@ namespace RPSLS
             roundsWon = 0;
         }
 
-        public override string SelectChoice()
+        public override string SelectChoice(string name)
         {
             return possibleChoices.choices[rand.Next(possibleChoices.choices.Count()-1)];
         }

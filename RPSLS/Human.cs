@@ -8,39 +8,38 @@ namespace RPSLS
 {
     class Human : Player
     {
-        public Human()
+        public Human(string gameName)
         {
-            name = GetName();
+            name = GetName(gameName);
             roundsWon = 0;
         }
 
-        public string GetName()
+        public string GetName(string gameName)
         {
-            Console.Write("\nEnter name for Player 1: ");
+            Console.Write($"\nEnter name for {gameName}: ");
             return Console.ReadLine();
         }
 
-        public override string SelectChoice()
+        public override string SelectChoice(string name)
         {
-            Console.Write("\n[1] Rock\n[2] Paper\n[3] Scissors\n[4] Lizard\n[5] Spock");
-            Console.Write("\nSelect your draw!: ");
+            Console.Write("\n[1] Rock\n[2] Paper\n[3] Scissors\n[4] Lizard\n[5] Spock\n");
+            Console.WriteLine($"\n{name}, select your draw!: ");
             while (true)
             {
-                switch (Console.ReadLine())
+                switch (Console.ReadKey(true).KeyChar)
                 {
-                    case "1":
+                    case '1':
                         return possibleChoices.choices[0];
-                    case "2":
+                    case '2':
                         return possibleChoices.choices[1];
-                    case "3":
+                    case '3':
                         return possibleChoices.choices[2];
-                    case "4":
+                    case '4':
                         return possibleChoices.choices[3];
-                    case "5":
+                    case '5':
                         return possibleChoices.choices[4];
                     default:
                         Console.Write("\n| Invalid Selection | ");
-                        Console.Write("\n[1] Rock\n[2] Paper\n[3] Scissors\n[4] Lizard\n[5] Spock");
                         Console.Write("\nSelect your draw!: ");
                         break;
                 }

@@ -17,7 +17,7 @@ namespace RPSLS
             possibleChoices = new Choice();
         }
 
-        public abstract string SelectChoice();
+        public abstract string SelectChoice(string name);
 
     }
 }
