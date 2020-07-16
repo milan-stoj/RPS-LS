@@ -21,7 +21,7 @@ namespace RPSLS
             return Console.ReadLine();
         }
 
-        public string SelectChoice()
+        public override string SelectChoice()
         {
             Console.Clear();
             Console.Write("\n[1] Rock\n[2] Paper\n[3] Scissors\n[4] Lizard\n[5] Spock");

@@ -8,23 +8,22 @@ namespace RPSLS
 {
     class Game
     {
-        string winnerName;
-        bool winner;
-        Player player1;
-        Player player2;
-        Player[] players;
-        Round[] roundHistory;
+        public Player player1;
+        public Player player2;
 
         public Game()
         {
             player1 = new Human();
             player2 = SelectGameType();
-            // RunGame(player1, player2, );
+            RunGame(player1, player2);
         }
 
-        public void RunGame()
+        public void RunGame(Player player1, Player player2)
         {
-            
+            while (true)
+            {
+                player1.SelectChoice();
+            }
         }
 
         public Player SelectGameType()

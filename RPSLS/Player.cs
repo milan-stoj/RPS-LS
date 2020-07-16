@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace RPSLS
 {
-    class Player
+    abstract class Player
     {
         public string name;
         public int roundsWon;
@@ -17,6 +17,7 @@ namespace RPSLS
             possibleChoices = new Choice();
         }
 
-        
+        public abstract string SelectChoice();
+
     }
 }
