@@ -16,6 +16,7 @@ namespace RPSLS
 
         public string GetName(string gameName)
         {
+            Console.Clear();
             Console.Write($"\nEnter name for {gameName}: ");
             return Console.ReadLine();
         }

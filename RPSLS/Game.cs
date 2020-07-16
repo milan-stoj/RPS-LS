@@ -14,7 +14,7 @@ namespace RPSLS
         public Game()
         {
             player1 = new Human("Player 1");
-            player2 = SelectGameType();
+            player2 = SelectGameType(player1.name);
             Console.Clear();
             RunGame(player1, player2);
         }
@@ -32,7 +32,7 @@ namespace RPSLS
                 if (player1Choice == player2Choice)
                 {
                     Console.Clear();
-                    Console.WriteLine("Tie! Draw again");
+                    Console.WriteLine($"{player1.name} draws {player1Choice}, {player2.name} draws {player2Choice}. Tie! Draw again");
                 }
                 else
                 {
@@ -43,19 +43,19 @@ namespace RPSLS
             PrintScores(player1, player2);
             if (player1.roundsWon == 2)
             {
-                Console.WriteLine($"{player1.name} is the ultimate winner!");
+                Console.WriteLine($"\n{player1.name} is the ultimate winner!");
             }
             else
             {
-                Console.WriteLine($"{player2.name} is the ultimate winner!");
+                Console.WriteLine($"\n{player2.name} is the ultimate winner!");
             }
-            Console.ReadLine();
         }
 
-        public Player SelectGameType()
+        public Player SelectGameType(string playerName)
         {
             Console.Clear();
-            Console.Write("\n[1] vs Computer Game\n[2] vs Human Game\nSelect game type: ");
+            Console.WriteLine($"{playerName}, please select who you will be playing against.");
+            Console.Write("\n[1] vs Computer Game\n[2] vs Human Game\n\nSelect game type: ");
             while (true)
             {
                 switch (Console.ReadKey(true).KeyChar)
@@ -67,7 +67,7 @@ namespace RPSLS
                     default:
                         Console.Clear();
                         Console.Write("\n| Invalid Selection | ");
-                        Console.Write("\n[1] vs Computer Game\n[2] vs Human Game\nTry again: ");
+                        Console.Write("\n[1] vs Computer Game\n[2] vs Human Game\n\nTry again: ");
                         break;
                 }
             }
@@ -78,39 +78,39 @@ namespace RPSLS
             Console.WriteLine($"{player1.name} draws {player1Choice} and {player2.name} draws {player2Choice}");
             if (player1Choice == "Rock" && (player2Choice == "Scissors" || player2Choice == "Lizard"))
             {
-                Console.WriteLine($"{player1.name} wins!");
+                Console.WriteLine($"{player1.name} wins!\n");
                 return player1;
             }
             else if (player1Choice == "Paper" && (player2Choice == "Rock" || player2Choice == "Spock"))
             {
-                Console.WriteLine($"{player1.name} wins!");
+                Console.WriteLine($"{player1.name} wins!\n");
                 return player1;
             }
             else if (player1Choice == "Scissors" && (player2Choice == "Paper" || player2Choice == "Lizard"))
             {
-                Console.WriteLine($"{player1.name} wins!");
+                Console.WriteLine($"{player1.name} wins!\n");
                 return player1;
             }
             else if (player1Choice == "Lizard" && (player2Choice == "Spock" || player2Choice == "Paper"))
             {
-                Console.WriteLine($"{player1.name} wins!");
+                Console.WriteLine($"{player1.name} wins!\n");
                 return player1;
             }
             else if (player1Choice == "Spock" && (player2Choice == "Rock" || player2Choice == "Scissors"))
             {
-                Console.WriteLine($"{player1.name} wins!");
+                Console.WriteLine($"{player1.name} wins!\n");
                 return player1;
             }
             else
             {
-                Console.WriteLine($"{player2.name} wins!");
+                Console.WriteLine($"{player2.name} wins!\n");
                 return player2;
             } 
         }
 
         public void PrintScores(Player player1, Player player2)
         {
-            Console.WriteLine($"{player1.name} Score: {player1.roundsWon}\n{player2.name}: {player2.roundsWon}");
+            Console.WriteLine($"{player1.name} Score: {player1.roundsWon}\n{player2.name} Score: {player2.roundsWon}");
         }
     }
 }
