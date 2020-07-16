@@ -14,7 +14,7 @@ namespace RPSLS
         public Choice()
         {
             choices = new List<string>() { "Rock", "Paper", "Scissors", "Lizard", "Spock" };
-            choiceImage = new List<string>()
+            /*choiceGraphic = new List<string>()
             {
                 @"
             
@@ -69,7 +69,7 @@ namespace RPSLS
               |   |o     )( |                      
               |   |o     \/ \                      
                                   "
-            };
+            };*/
         }
     }
 }
